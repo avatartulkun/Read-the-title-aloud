@@ -87,6 +87,13 @@ Web 原型依赖浏览器的 Web Speech API，在不同浏览器和 Android WebV
 - 不要提交 `local.properties`，它包含本机 Android SDK 路径。
 - 不要提交 `build/` 目录或 APK 文件，它们是本地生成产物。
 
+## 联系方式
+
+如果你有建议、反馈或合作想法，可以通过以下方式联系：
+
+- GitHub Issues: https://github.com/avatartulkun/Read-the-title-aloud/issues
+- Email: tulkun@foxmail.com
+
 ## 开源协议
 
 本项目使用 MIT License，详见 `LICENSE`。
