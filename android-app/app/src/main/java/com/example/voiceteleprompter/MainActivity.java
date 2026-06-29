@@ -1078,10 +1078,17 @@ public class MainActivity extends Activity {
             deleteButton.setTextColor(Color.rgb(185, 48, 48));
             deleteButton.setPadding(dp(6), 0, dp(6), 0);
             deleteButton.setOnClickListener(v -> {
-                savedScripts.remove(scriptValue);
-                persistSavedScripts();
-                dialogLayout.removeView(historyRow);
-                statusView.setText("已删除历史稿件");
+                new AlertDialog.Builder(this)
+                    .setTitle("删除历史稿件")
+                    .setMessage("确定要删除这份历史稿件吗？删除后无法恢复。")
+                    .setPositiveButton("删除", (confirmDialog, which) -> {
+                        savedScripts.remove(scriptValue);
+                        persistSavedScripts();
+                        dialogLayout.removeView(historyRow);
+                        statusView.setText("已删除历史稿件");
+                    })
+                    .setNegativeButton(R.string.dialog_cancel, null)
+                    .show();
             });
 
             historyRow.addView(item, new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
