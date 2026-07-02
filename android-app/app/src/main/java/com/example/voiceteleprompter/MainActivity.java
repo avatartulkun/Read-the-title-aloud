@@ -1643,7 +1643,7 @@ public class MainActivity extends Activity {
             startAliyunRealtimeRecognition();
             return;
         }
-        if (isBaiduProvider()) {
+        if (isBaiduProvider() && !getBaiduSecretKey().isEmpty()) {
             startCloudRecording();
             return;
         }
